@@ -6,6 +6,7 @@ const AuthRoute = require('./Routes/Auth.route')
 
 
 const app = express()
+app.use(morgan('dev'))
 
 app.get('/', async(req, res, next) =>{
     res.send("Hello from Express. ")
@@ -14,6 +15,8 @@ app.get('/', async(req, res, next) =>{
 
 
 app.use('/auth', AuthRoute )
+
+
 
 
 app.use(async(req, res, next) =>{
